@@ -13,9 +13,11 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
+      log_in @user
       flash[:success] = "Welcome to the Sample App"
       redirect_to @user
       # Why does @user redirects to users/show/id?
+      # Becaue of the users resource used in the routes file. Read actions for a RESTful resource
   	else
   		render 'new'
   	end

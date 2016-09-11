@@ -1,2 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
+hugo: 
+  name: Hugo Suastegui Pineda
+  email: hugo.suastegiu.pineda@gmail.com
+  password_digest: <%= User.digest('password') %>
+  
